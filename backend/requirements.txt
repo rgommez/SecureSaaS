@@ -1,0 +1,4 @@
+fastapi
+uvicorn[standard]
+python-dotenv
+prometheus_fastapi_instrumentator
