@@ -27,56 +27,57 @@ Proyecto de implementación segura de una aplicación SaaS con FastAPI, Docker, 
 * **Logging:** Configuración del driver de logging de Docker para enviar logs del backend a Loki.
 
 
-## Estructura del Proyecto
+## 📁 Estructura del Proyecto
 
-SecureSaaS/
-|
-├── docker-compose.yml
-|
-├── backend/
-│   ├── Dockerfile
-│   ├── requirements.txt
-│   ├── .env
-│   ├── app/
-│   |   ├── auth.py
-│   |   ├── config.py
-│   |   ├── main.py
-│   |   ├── models.py
-│   |   └── routers.py
-│   └── tests/
-│       └── test_app.py
-├── .github/
-│   └── workflows/
-│       └── ci-cd.yml
-├── infra/
-│   ├── grafana/
-│   |    └── provisioning/
-│   |	   		├── dashboards/
-│   |	   		|	 └── dashboard.json
-│   |	   		└── datasources/
-│   |	   			 └── datasources.yml
-│   ├── loki/
-│   |    ├── config.yaml
-│   |    ├── boltdb-cache/
-│   |	 |		└── index_20218/
-│   |	 | 				└── fake/
-│   |    ├── chunks/
-│   |	 | 		└── loki_cluster_seed.json
-│   |    ├── compactor/
-│   |    ├── index/
-│   |	 | 		└── uploader/
-│   |	 | 				└── name
-│   |    └── wal/
-│   |	 | 		├── 00000065
-│   |	 | 		└── checkpoint.000064/
-│   |	 | 				└── 00000000
-│   ├── nginx/
-│   |    └── default.conf
-│   └── prometheus/
-│   |    └── prometheus.yml
-└── scripts/
-    ├── backup_and_encrypt.sh
-    └── run_tests.sh
+```text
+
+📁 SecureSaaS
+├── 📄 docker-compose.yml
+├── 📁 backend
+│   ├── 📄 Dockerfile
+│   ├── 📄 requirements.txt
+│   ├── 📄 .env
+│   ├── 📁 app
+│   │   ├── 📄 auth.py
+│   │   ├── 📄 config.py
+│   │   ├── 📄 main.py
+│   │   ├── 📄 models.py
+│   │   └── 📄 routers.py
+│   └── 📁 tests
+│       └── 📄 test_app.py
+├── 📁 .github
+│   └── 📁 workflows
+│       └── 📄 ci-cd.yml
+├── 📁 infra
+│   ├── 📁 grafana
+│   │   └── 📁 provisioning
+│   │       ├── 📁 dashboards
+│   │       │   └── 📄 dashboard.json
+│   │       └── 📁 datasources
+│   │           └── 📄 datasources.yml
+│   ├── 📁 loki
+│   │   ├── 📄 config.yaml
+│   │   ├── 📁 boltdb-cache
+│   │   │   └── 📁 index_20218
+│   │   │       └── 📁 fake
+│   │   ├── 📁 chunks
+│   │   │   └── 📄 loki_cluster_seed.json
+│   │   ├── 📁 compactor
+│   │   ├── 📁 index
+│   │   │   └── 📁 uploader
+│   │   │       └── 📄 name
+│   │   └── 📁 wal
+│   │       ├── 📄 00000065
+│   │       └── 📁 checkpoint.000064
+│   │           └── 📄 00000000
+│   ├── 📁 nginx
+│   │   └── 📄 default.conf
+│   └── 📁 prometheus
+│       └── 📄 prometheus.yml
+└── 📁 scripts
+    ├── 📄 backup_and_encrypt.sh
+    └── 📄 run_tests.sh
+```
 
 ## Prerrequisitos
 
@@ -89,18 +90,18 @@ SecureSaaS/
 
 1.  **Clonar el repositorio:**
 
-    git clone [https://github.com/TU_USUARIO/SecureSaaS.git](https://github.com/TU_USUARIO/SecureSaaS.git)
+    git clone [https://github.com/rgommez/SecureSaaS.git](https://github.com/rgommez/SecureSaaS.git)
+    
     cd SecureSaaS
     
-    *(Reemplaza `TU_USUARIO` con tu nombre de usuario)*
 
-2.  **Configurar variables de entorno para el backend:**
+3.  **Configurar variables de entorno para el backend:**
 
     cp backend/.env.example backend/.env
 
     *(Puedes editar `backend/.env` si es necesario, pero el `SECRET_KEY=changeme` por defecto funciona con el token `secret-token`)*
 
-3.  **Construir y levantar los contenedores:**
+4.  **Construir y levantar los contenedores:**
 
     docker-compose up --build
 
